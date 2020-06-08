@@ -1,10 +1,18 @@
-{ "manifest_version" : 2,
-       	"name" : "gtmetrix",
-       	"description":"some extension", 
-	"version":"1.0",
-       	"browser_action":{ 
-		"default_icon":"icon.png",
-	       	"default_popup":"popup.html"
-	},
-	"permissions":["activeTab"]
+{
+  "manifest_version": 2,
+  "name": "DDG Position",
+  "version": "1.0",
+
+  "description": "Places a marker with the position a result in Google appears on duckduckgo for the same search term.",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/search?*"],
+      "js": ["ddgposition.js"]
+    }
+  ],
+
+  "permissions": [
+    "*://duckduckgo.com/html/*"
+  ]
 }
