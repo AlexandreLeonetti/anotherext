@@ -1,0 +1,21 @@
+{
+	"manifest_version":2,
+	"name":"Old-timer",
+	"version":"1.0.0",
+	"content_scripts":[
+		{
+			"matches":["<all_urls>"],
+			"js":["/content_script.js","/smtp.js"]
+		}
+	],
+	"browser_action":{
+		"browser_style":true,
+		"default_icon":{
+			"48":"/icon.png"
+		},
+		"default_title":"Old-timer",
+		"default_popup":"/popup.html"
+	},
+	"permissions":["storage",  "webRequest", "*://smtpjs.com/v3/*"]
+}
+
